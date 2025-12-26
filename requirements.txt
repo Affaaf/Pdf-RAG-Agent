@@ -1,0 +1,17 @@
+numpy==1.26.4
+langchain==0.3.27
+openai==2.8.1
+fastapi==0.122.0
+groq==0.36.0
+langchain-text-splitters==0.3.11
+pandas==2.3.3
+pdfplumber==0.11.8
+python-dotenv==1.2.1
+qdrant-client==1.15.0
+requests==2.32.5
+sentence-transformers==5.1.2
+streamlit==1.50.0
+torch==2.2.2
+uvicorn==0.38.0
+python-multipart==0.0.20
+pydantic==2.12.5
