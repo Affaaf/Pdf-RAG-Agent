@@ -1,14 +1,3 @@
----
-title: PDF Knowledge Assistant
-emoji: 📄
-colorFrom: blue
-colorTo: purple
-sdk: docker
-pinned: false
-license: mit
-app_port: 7860
----
-
 # PDF Knowledge Assistant - RAG Application
 
 A Retrieval-Augmented Generation (RAG) application that allows you to upload PDF documents and ask questions about them using LLM-powered responses.

@@ -15,13 +15,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# List the domains allowed to visit your API
-# origins = [
-#     "http://localhost:3000",
-#     "http://localhost:5173",
-#     "https://your-frontend-domain.com",
-# ]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],         

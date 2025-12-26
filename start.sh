@@ -3,10 +3,10 @@
 # Startup script for Hugging Face Spaces deployment
 # This script starts Qdrant, FastAPI, and Streamlit
 
-echo "🚀 Starting PDF Knowledge Assistant..."
+echo " Starting PDF Knowledge Assistant..."
 
 # Start Qdrant in background
-echo "📦 Starting Qdrant..."
+echo " Starting Qdrant..."
 if command -v qdrant &> /dev/null; then
     # Create Qdrant config if it doesn't exist
     if [ ! -f /app/qdrant_config.yaml ]; then
@@ -23,11 +23,11 @@ EOF
     QDRANT_PID=$!
     echo "Qdrant started with PID: $QDRANT_PID"
 else
-    echo "⚠️  Warning: Qdrant binary not found. Make sure QDRANT_URL points to an external Qdrant instance."
+    echo " Warning: Qdrant binary not found. Make sure QDRANT_URL points to an external Qdrant instance."
 fi
 
 # Wait for Qdrant to be ready
-echo "⏳ Waiting for Qdrant to be ready..."
+echo " Waiting for Qdrant to be ready..."
 sleep 5
 
 # Start FastAPI in background
@@ -37,13 +37,13 @@ FASTAPI_PID=$!
 echo "FastAPI started with PID: $FASTAPI_PID"
 
 # Wait for FastAPI to be ready
-echo "⏳ Waiting for FastAPI to be ready..."
+echo " Waiting for FastAPI to be ready..."
 sleep 3
 
 # Health check for FastAPI
 for i in {1..10}; do
     if curl -s http://localhost:8000/docs > /dev/null; then
-        echo "✅ FastAPI is ready!"
+        echo " FastAPI is ready!"
         break
     fi
     echo "Waiting for FastAPI... ($i/10)"
@@ -51,7 +51,7 @@ for i in {1..10}; do
 done
 
 # Start Streamlit (main process - keeps container alive)
-echo "🎨 Starting Streamlit app..."
+echo " Starting Streamlit app..."
 streamlit run app.py \
     --server.port 7860 \
     --server.address 0.0.0.0 \

@@ -1,5 +1,3 @@
-# Entry point for Hugging Face Spaces
-# This file is required by HF Spaces for Streamlit apps
 import streamlit as st
 import requests
 import os
@@ -8,8 +6,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Set API URLs - use localhost when running in Docker/container
-# Hugging Face Spaces will run FastAPI on the same container
 API_SEARCH_URL = os.getenv("API_SEARCH_URL", "http://localhost:8000/search")
 API_UPLOAD_URL = os.getenv("API_UPLOAD_URL", "http://localhost:8000/upload-pdf")
 
