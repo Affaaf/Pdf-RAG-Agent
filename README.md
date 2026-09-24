@@ -143,8 +143,3 @@ pdf_agent/
 2. **API key errors**: Verify your API keys are set correctly in environment variables
 3. **Port conflicts**: Ensure ports 8000 and 7860 are available
 4. **Docker issues**: For HF Spaces, ensure Docker-in-Docker is supported or use Qdrant Cloud
-
-## License
-
-MIT
-
